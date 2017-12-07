@@ -1,13 +1,15 @@
 <?php
 namespace Fp\OpenIdBundle\Tests\Security\Core\Authentication\Token;
 
+use PHPUnit\Framework\TestCase;
+
 use Fp\OpenIdBundle\Security\Core\Authentication\Token\OpenIdToken;
 
 /**
  * @author Kotlyar Maksim <kotlyar.maksim@gmail.com>
  * @since 4/26/12
  */
-class OpenIdTokenTest extends \PHPUnit_Framework_TestCase
+class OpenIdTokenTest extends TestCase
 {
     /**
      * @test

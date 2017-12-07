@@ -3,6 +3,7 @@ namespace Fp\OpenIdBundle\Tests\RelyingParty;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use PHPUnit\Framework\TestCase;
 
 use Fp\OpenIdBundle\RelyingParty\AbstractRelyingParty;
 use Fp\OpenIdBundle\RelyingParty\IdentityProviderResponse;
@@ -11,7 +12,7 @@ use Fp\OpenIdBundle\RelyingParty\IdentityProviderResponse;
  * @author Kotlyar Maksim <kotlyar.maksim@gmail.com>
  * @since 4/19/12
  */
-class AbstractRelyingPartyTest extends \PHPUnit_Framework_TestCase
+class AbstractRelyingPartyTest extends TestCase
 {
     /**
      * @test

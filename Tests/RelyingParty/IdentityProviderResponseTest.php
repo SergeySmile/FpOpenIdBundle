@@ -1,13 +1,15 @@
 <?php
 namespace Fp\OpenIdBundle\Tests\RelyingParty;
 
+use PHPUnit\Framework\TestCase;
+
 use Fp\OpenIdBundle\RelyingParty\IdentityProviderResponse;
 
 /**
  * @author Kotlyar Maksim <kotlyar.maksim@gmail.com>
  * @since 4/12/12
  */
-class IdentityProviderResponseTest extends \PHPUnit_Framework_TestCase
+class IdentityProviderResponseTest extends TestCase
 {
     /**
      * @test

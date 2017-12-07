@@ -6,11 +6,13 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
+use PHPUnit\Framework\TestCase;
+
 use Fp\OpenIdBundle\Security\Http\Firewall\OpenIdAuthenticationListener;
 use Fp\OpenIdBundle\RelyingParty\IdentityProviderResponse;
 use Fp\OpenIdBundle\Security\Core\Authentication\Token\OpenIdToken;
 
-class OpenIdAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
+class OpenIdAuthenticationListenerTest extends TestCase
 {
     /**
      * @test
@@ -502,7 +504,7 @@ class OpenIdAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
  
     protected function createRelyingPartyMock()
     {
-        return $this->getMock('Fp\OpenIdBundle\RelyingParty\RelyingPartyInterface');
+        return $this->createMock('Fp\OpenIdBundle\RelyingParty\RelyingPartyInterface');
     }
 
     protected function createRelyingPartyStub($supportsReturn = null, $manageReturn = null)
@@ -525,7 +527,7 @@ class OpenIdAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
 
     protected function createRequestMock()
     {
-        return $this->getMock('Symfony\Component\HttpFoundation\Request', array(), array(), '', false, false);
+        return $this->createMock('Symfony\Component\HttpFoundation\Request', array(), array(), '', false, false);
     }
 
     protected function createRequestStub($hasSessionReturn = null, $hasPreviousSession = null, $duplicateReturn = null, $getSessionReturn = null)
@@ -558,27 +560,27 @@ class OpenIdAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
 
     protected function createSessionMock()
     {
-        return $this->getMock('Symfony\Component\HttpFoundation\Session\SessionInterface');
+        return $this->createMock('Symfony\Component\HttpFoundation\Session\SessionInterface');
     }
 
     protected function createTokenStorageMock()
     {
-        return $this->getMock('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface');
+        return $this->createMock('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface');
     }
 
     protected function createAuthenticationManagerMock()
     {
-        return $this->getMock('Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface');
+        return $this->createMock('Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface');
     }
 
     protected function createSessionAuthenticationStrategyMock()
     {
-        return $this->getMock('Symfony\Component\Security\Http\Session\SessionAuthenticationStrategyInterface');
+        return $this->createMock('Symfony\Component\Security\Http\Session\SessionAuthenticationStrategyInterface');
     }
 
     protected function createHttpUtilsMock()
     {
-        return $this->getMock('Symfony\Component\Security\Http\HttpUtils');
+        return $this->createMock('Symfony\Component\Security\Http\HttpUtils');
     }
 
     protected function createHttpUtilsStub($checkRequestPathResult = null, $createRedirectResponseReturn = null)
@@ -604,12 +606,12 @@ class OpenIdAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
      */
     protected function createAuthenticationFailureHandlerMock()
     {
-        return $this->getMock('Symfony\Component\Security\Http\Authentication\AuthenticationFailureHandlerInterface');
+        return $this->createMock('Symfony\Component\Security\Http\Authentication\AuthenticationFailureHandlerInterface');
     }
 
     protected function createGetResponseEventMock()
     {
-        return $this->getMock('Symfony\Component\HttpKernel\Event\GetResponseEvent', array(), array(), '', false);
+        return $this->createMock('Symfony\Component\HttpKernel\Event\GetResponseEvent', array(), array(), '', false);
     }
 
     protected function createGetResponseEventStub($request = null)
@@ -627,7 +629,7 @@ class OpenIdAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
 
     protected function createAuthenticationSuccessHandlerMock()
     {
-        return $this->getMock('Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface');
+        return $this->createMock('Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface');
     }
 
     protected function createAuthenticationSuccessHandlerStub()

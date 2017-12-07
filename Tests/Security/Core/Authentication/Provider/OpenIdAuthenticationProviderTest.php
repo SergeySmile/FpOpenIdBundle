@@ -5,12 +5,14 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
 
+use PHPUnit\Framework\TestCase;
+
 use Fp\OpenIdBundle\Security\Core\Authentication\Provider\OpenIdAuthenticationProvider;
 use Fp\OpenIdBundle\Security\Core\User\UserManagerInterface;
 use Fp\OpenIdBundle\Security\Core\Authentication\Token\OpenIdToken;
 use Fp\OpenIdBundle\Security\Core\Exception\UsernameByIdentityNotFoundException;
 
-class OpenIdAuthenticationProviderTest extends \PHPUnit_Framework_TestCase
+class OpenIdAuthenticationProviderTest extends TestCase
 {
     /**
      * @test
@@ -94,7 +96,7 @@ class OpenIdAuthenticationProviderTest extends \PHPUnit_Framework_TestCase
     {
         $authProvider = new OpenIdAuthenticationProvider('main');
 
-        $noneOpenIdToken = $this->getMock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
+        $noneOpenIdToken = $this->createMock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
 
         $this->assertFalse($authProvider->supports($noneOpenIdToken));
         $this->assertNull($authProvider->authenticate($noneOpenIdToken));
@@ -477,22 +479,22 @@ class OpenIdAuthenticationProviderTest extends \PHPUnit_Framework_TestCase
 
     protected function createUserProviderMock()
     {
-        return $this->getMock('Symfony\Component\Security\Core\User\UserProviderInterface');
+        return $this->createMock('Symfony\Component\Security\Core\User\UserProviderInterface');
     }
 
     protected function createUserCheckerMock()
     {
-        return $this->getMock('Symfony\Component\Security\Core\User\UserCheckerInterface');
+        return $this->createMock('Symfony\Component\Security\Core\User\UserCheckerInterface');
     }
 
     protected function createUserManagerMock()
     {
-        return $this->getMock('Fp\OpenIdBundle\Tests\Security\Core\Authentication\Provider\UserManager');
+        return $this->createMock('Fp\OpenIdBundle\Tests\Security\Core\Authentication\Provider\UserManager');
     }
 
     protected function createUserMock()
     {
-        return $this->getMock('Symfony\Component\Security\Core\User\UserInterface');
+        return $this->createMock('Symfony\Component\Security\Core\User\UserInterface');
     }
 }
 

@@ -3,10 +3,11 @@ namespace Fp\OpenIdBundle\Tests\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use PHPUnit\Framework\TestCase;
 
 use Fp\OpenIdBundle\DependencyInjection\FpOpenIdExtension;
 
-class FpOpenIdExtensionTest extends \PHPUnit_Framework_TestCase
+class FpOpenIdExtensionTest extends TestCase
 {
     public static function provideSupportedDbDrivers()
     {

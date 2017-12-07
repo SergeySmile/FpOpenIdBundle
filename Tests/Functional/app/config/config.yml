@@ -32,13 +32,13 @@ framework:
     templating:      { engines: ['twig'] }
     session:
         storage_id: session.storage.mock_file
-    secret:          %secret%
+    secret:          '%secret%'
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
-    default_locale:  %locale%
+    default_locale:  '%locale%'
 
 twig:
-    debug:            %kernel.debug%
-    strict_variables: %kernel.debug%
+    debug:            '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
     
 services:
     fp_openid.relying_party.fake:
@@ -46,5 +46,6 @@ services:
         
     controller.test:
         class: Fp\OpenIdBundle\Tests\Functional\TestController
+        public: true
         
         

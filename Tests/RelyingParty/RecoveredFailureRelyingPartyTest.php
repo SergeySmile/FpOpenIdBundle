@@ -4,6 +4,7 @@ namespace Fp\OpenIdBundle\Tests\RelyingParty;
 use Fp\OpenIdBundle\Security\Core\Authentication\Token\OpenIdToken;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use PHPUnit\Framework\TestCase;
 
 use Fp\OpenIdBundle\RelyingParty\RecoveredFailureRelyingParty;
 
@@ -11,7 +12,7 @@ use Fp\OpenIdBundle\RelyingParty\RecoveredFailureRelyingParty;
  * @author Kotlyar Maksim <kotlyar.maksim@gmail.com>
  * @since 4/12/12
  */
-class RecoveredFailureRelyingPartyTest extends \PHPUnit_Framework_TestCase
+class RecoveredFailureRelyingPartyTest extends TestCase
 {
     /**
      * @test
@@ -173,7 +174,7 @@ class RecoveredFailureRelyingPartyTest extends \PHPUnit_Framework_TestCase
 
     public function createRequestMock()
     {
-        return $this->getMock('Symfony\Component\HttpFoundation\Request', array(), array(), '', false);
+        return $this->createMock('Symfony\Component\HttpFoundation\Request', array(), array(), '', false);
     }
 
     public function createRequestStub($returnGet = null, $returnSession = null)
@@ -196,7 +197,7 @@ class RecoveredFailureRelyingPartyTest extends \PHPUnit_Framework_TestCase
 
     public function createSessionMock()
     {
-        return $this->getMock('Symfony\Component\HttpFoundation\Session\SessionInterface');
+        return $this->createMock('Symfony\Component\HttpFoundation\Session\SessionInterface');
     }
 
     public function createSessionStub($returnGet = null)

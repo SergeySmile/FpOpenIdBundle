@@ -2,10 +2,10 @@
 namespace Fp\OpenIdBundle\Tests\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Processor;
-
+use PHPUnit\Framework\TestCase;
 use Fp\OpenIdBundle\DependencyInjection\Configuration;
 
-class ConfigurationTest extends  \PHPUnit_Framework_TestCase
+class ConfigurationTest extends TestCase
 {
     /**
      * @test

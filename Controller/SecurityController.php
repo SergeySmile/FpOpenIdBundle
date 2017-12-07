@@ -32,7 +32,7 @@ class SecurityController implements ContainerAwareInterface
         }
 
         return $this->container->get('templating')->renderResponse(
-            'FpOpenIdBundle:Security:login.html.'.$this->container->getParameter('fp_openid.template.engine'),
+            '@FpOpenId/Security/login.html.'.$this->container->getParameter('fp_openid.template.engine'),
             array('error' => $error)
         );
     }

@@ -1,9 +1,11 @@
 <?php
 namespace Fp\OpenIdBundle\Tests\Model;
 
+use PHPUnit\Framework\TestCase;
+
 use Fp\OpenIdBundle\Model\UserManager;
 
-class UserManagerTest extends \PHPUnit_Framework_TestCase
+class UserManagerTest extends TestCase
 {
     /**
      * @test
@@ -130,21 +132,21 @@ class UserManagerTest extends \PHPUnit_Framework_TestCase
 
     protected function createIdentityManagerMock()
     {
-        return $this->getMock('Fp\OpenIdBundle\Model\IdentityManagerInterface');
+        return $this->createMock('Fp\OpenIdBundle\Model\IdentityManagerInterface');
     }
 
     protected function createUserMock()
     {
-        return $this->getMock('Symfony\Component\Security\Core\User\UserInterface');
+        return $this->createMock('Symfony\Component\Security\Core\User\UserInterface');
     }
 
     protected function createIdentityMock()
     {
-        return $this->getMock('Fp\OpenIdBundle\Model\IdentityInterface');
+        return $this->createMock('Fp\OpenIdBundle\Model\IdentityInterface');
     }
 
     protected function createUserIdentityMock()
     {
-        return $this->getMock('Fp\OpenIdBundle\Model\UserIdentityInterface');
+        return $this->createMock('Fp\OpenIdBundle\Model\UserIdentityInterface');
     }
 }

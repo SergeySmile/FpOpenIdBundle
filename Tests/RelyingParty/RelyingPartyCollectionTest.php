@@ -1,13 +1,15 @@
 <?php
 namespace Fp\OpenIdBundle\Tests\RelyingParty;
 
+use PHPUnit\Framework\TestCase;
+
 use Fp\OpenIdBundle\RelyingParty\RelyingPartyCollection;
 
 /**
  * @author Kotlyar Maksim <kotlyar.maksim@gmail.com>
  * @since 4/12/12
  */
-class RelyingPartyCollectionTest extends \PHPUnit_Framework_TestCase
+class RelyingPartyCollectionTest extends TestCase
 {
     /**
      * @test
@@ -240,11 +242,11 @@ class RelyingPartyCollectionTest extends \PHPUnit_Framework_TestCase
 
     public function createRequestMock()
     {
-        return $this->getMock('Symfony\Component\HttpFoundation\Request', array(), array(), '', false, false);
+        return $this->createMock('Symfony\Component\HttpFoundation\Request', array(), array(), '', false, false);
     }
 
     public function createRelyingPartyMock()
     {
-        return $this->getMock('Fp\OpenIdBundle\RelyingParty\RelyingPartyInterface');
+        return $this->createMock('Fp\OpenIdBundle\RelyingParty\RelyingPartyInterface');
     }
 }

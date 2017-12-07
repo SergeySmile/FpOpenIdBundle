@@ -1,9 +1,11 @@
 <?php
 namespace Fp\OpenIdBundle\Tests\Model;
 
+use PHPUnit\Framework\TestCase;
+
 use Fp\OpenIdBundle\Model\Identity;
 
-class IdentityTest extends \PHPUnit_Framework_TestCase
+class IdentityTest extends TestCase
 {
     /**
      * @test

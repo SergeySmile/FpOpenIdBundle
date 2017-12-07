@@ -1,9 +1,11 @@
 <?php
 namespace Fp\OpenIdBundle\Tests\Model;
 
+use PHPUnit\Framework\TestCase;
+
 use Fp\OpenIdBundle\Model\UserIdentity;
 
-class UserIdentityTest extends \PHPUnit_Framework_TestCase
+class UserIdentityTest extends TestCase
 {
     /**
      * @test
@@ -51,6 +53,6 @@ class UserIdentityTest extends \PHPUnit_Framework_TestCase
      */
     protected function createUser()
     {
-        return $this->getMock('Symfony\Component\Security\Core\User\UserInterface');
+        return $this->createMock('Symfony\Component\Security\Core\User\UserInterface');
     }
 }

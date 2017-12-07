@@ -5,10 +5,11 @@ use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use PHPUnit\Framework\TestCase;
 
 use Fp\OpenIdBundle\DependencyInjection\Security\Factory\OpenIdFactory;
 
-class OpenIdFactoryTest extends \PHPUnit_Framework_TestCase
+class OpenIdFactoryTest extends TestCase
 {
     /**
      * @test
